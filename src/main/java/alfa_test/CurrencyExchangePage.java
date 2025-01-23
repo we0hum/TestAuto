@@ -7,10 +7,10 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.actions;
 
 public class CurrencyExchangePage {
-    private final SelenideElement searchAccountLink = $x("//a[@class='aXYDeT gXYDeT cXYDeT cnVCIM bnVCIM' and text()='Личный кабинет Альфа-Инвестиции:']");
+    private final SelenideElement searchAccountLink = $x("//div[@data-test-id='accordion-panel-2']//a[contains(@href, '/from-account')] ");
+    private final SelenideElement thirdQuestionSearch = $x("//div[@data-test-id='accordion-item-2']");
 
     public void clickTheThirdQuestion() {
-        SelenideElement thirdQuestionSearch = $x("//div[@data-test-id='accordion-item-2']");
         actions().moveToElement(thirdQuestionSearch).click(thirdQuestionSearch).perform();
     }
 

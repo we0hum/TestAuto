@@ -6,8 +6,8 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage {
-    private final SelenideElement investmentButton = $x("//a[@class='aXYDeT gXYDeT eXYDeT eI24uu' and text() = 'Инвестиции']");
-    private final SelenideElement currencyExchangeButton = $x("//a[@class='aXYDeT gXYDeT eXYDeT' and @href ='/make-money/investments/valyuta/']");
+    private final SelenideElement investmentButton = $x("//div[@data-test-id='Main-Header-Main-Desktop-container']//a[@title='Инвестиции']");
+    private final SelenideElement currencyExchangeButton = $x("//div[@class='aTQdJq']//a[contains(@href, '/valyuta/')]");
 
     public MainPage(String url) {
         Selenide.open(url);
