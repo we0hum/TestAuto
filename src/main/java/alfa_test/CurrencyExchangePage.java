@@ -10,6 +10,7 @@ public class CurrencyExchangePage {
     private final SelenideElement searchAccountLink = $x("//div[@data-test-id='accordion-panel-2']//a[contains(@href, '/from-account')] ");
     private final SelenideElement thirdQuestionSearch = $x("//div[@data-test-id='accordion-item-2']");
 
+
     public void clickTheThirdQuestion() {
         actions().moveToElement(thirdQuestionSearch).click(thirdQuestionSearch).perform();
     }
