@@ -2,15 +2,14 @@ package alfa_test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import test_rate_euro.CurrencyPage;
 
 public class AlfaTest {
     public final static String BASE_URL = "https://alfabank.ru";
 
-    @Test
-    public void ch(){
-        new MainPage(BASE_URL).clickOnButton().clickOn();
-        Assert.assertTrue(new CurrencyExchangePage().getHref().contains("https://lk.alfadirect.ru/transfers/money/from-account"));
-        Assert.assertTrue(new CurrencyExchangePage().clickOnLink().contains("https://lk.alfadirect.ru/transfers/money/from-account"));
+    @Test(description = "Проверка перехода по ссылке Личный кабинет Альфа-Инвестиций")
+    public void checkAlfaInvestmentsLink() {
+        new MainPage(BASE_URL).redirectToPageCurrencyExchange().clickTheThirdQuestion();
+        Assert.assertTrue(new CurrencyExchangePage().getHrefAttribute().contains("https://lk.alfadirect.ru/transfers/money/from-account"));
+        Assert.assertTrue(new CurrencyExchangePage().returnUrlOnThePage().contains("https://lk.alfadirect.ru/transfers/money/from-account"));
     }
 }
